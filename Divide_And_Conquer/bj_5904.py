@@ -23,3 +23,5 @@ if S(1, size, stage) == None:
     print('o')
 else:
     print('m')
+
+#느려서 시간초과...
