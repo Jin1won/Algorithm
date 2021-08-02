@@ -18,6 +18,6 @@ def compression(y , x, size): #그래프의 좌표 값과 그래프의 사이즈
                 compression((y+size//2),(x+size//2),size//2)
                 print(")",end='')
                 return
-    print(video[y][x],end='')
+    print(video[y][x],end='') #다 일치한다면 하나의 숫자로 합쳐서 출력할 수 있으므로 하나만 출력
 
 compression(0,0,n)
