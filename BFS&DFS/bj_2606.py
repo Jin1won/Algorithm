@@ -16,17 +16,17 @@ for i in range(m):
     graph[a].append(b)
     graph[b].append(a)
 
-# def dfs(v):
-#     global cnt
-#     visited_dfs[v] = True
-#     for i in graph[v]:
-#         if visited_dfs[i] != True:
-#             cnt += 1
-#             dfs(i)
-#     return
+def dfs(v):
+    global cnt
+    visited_dfs[v] = True
+    for i in graph[v]:
+        if visited_dfs[i] != True:
+            cnt += 1
+            dfs(i)
+    return
 
-# dfs(1)
-# print(cnt)
+dfs(1)
+print(cnt)
 
 def bfs(v):
     queue = deque()
