@@ -1,3 +1,8 @@
+from typing import Collection
+
+
+from collections import deque
+
 def solution(n, k, cmd):
     table = []
     for i in range(n):

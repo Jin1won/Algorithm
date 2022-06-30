@@ -33,7 +33,7 @@ def bfs(x, y, size):  # 먹을 수 있는 물고기가 있나 체크
                 visited[nx][ny] = visited[x][y] + 1
                 if 0 < graph[nx][ny] < size:  # 물고기 크기가 사이즈보다 작으면 먹는다.
                     heapq.heappush(heap, (visited[nx][ny], nx, ny))
-                    # 우선순위 큐는 0번째 인덱스에 해당하는 값 가지고 작은 순서로 큐에 보관한다.
+                    # heapq는 가장 왼쪽이 가장 작은 값이다.
     return heap
 
 
@@ -42,6 +42,7 @@ eat = 0
 size = 2
 while True:
     heap = bfs(shark_x, shark_y, size)
+    print(heap)
     # 이전에 먹은 물고기 좌표는 없어지고, 계속 먹을 수 있는 물고기 좌표가 갱신되어야 하므로 heap을 계속 선언해준다.
     if not heap:
         break

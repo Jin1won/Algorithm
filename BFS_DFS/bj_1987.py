@@ -1,8 +1,6 @@
 import sys
 
-sys.setrecursionlimit(
-    400
-)  # 최대 400번의 recursion이 발생할 수 있으므로 그 이상 recursion이 안 발생하게 리밋을 걸어준다.
+sys.setrecursionlimit(400)#최대 400번의 recursion이 발생할 수 있으므로 그 이상 recursion이 안 발생하게 리밋을 걸어준다.
 
 r, c = map(int, sys.stdin.readline().split())
 
