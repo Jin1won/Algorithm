@@ -1,4 +1,17 @@
 const fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "example.txt";
+let input = fs.readFileSync(filePath).toString().trim().split("\n");
+const n = parseInt(input[0]);
+const a = input[1].split(" ").map(Number);
 
-console.log(input);
+const dp = Array(1000).fill(1);
+
+for (let i = 1; i < n; i++) {
+  for (let j = 0; j < i; j++) {
+    if (a[i] > a[j]) {
+      dp[i] = Math.max(dp[i], dp[j] + 1);
+    }
+  }
+}
+
+console.log(Math.max(...dp.slice(0, n)));
